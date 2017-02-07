@@ -35,3 +35,7 @@ done
 if [[ -e "${HOME}/.bash_local" ]]; then
   source "${HOME}/.bash_local"
 fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+[ -s "/Users/cawong/.scm_breeze/scm_breeze.sh" ] && source "/Users/cawong/.scm_breeze/scm_breeze.sh"

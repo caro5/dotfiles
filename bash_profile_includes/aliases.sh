@@ -5,6 +5,13 @@ function current_git_branch_bare {
 alias ag='ag --ignore \*.json'
 
 alias g=git
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gco="git checkout"
+alias gc="git commit"
+alias nerd="cd /srv/nerdwallet"
+alias jan="cd /srv/nerdwallet/janitor"
+alias gst="git stash"
 alias gpr="git pull --rebase"
 alias gmu="git fetch upstream && git merge --ff-only upstream/master"
 alias gru="git fetch upstream && git rebase upstream/master"
@@ -29,5 +36,5 @@ alias .........="cd ../../../../../../../.."
 alias ..........="cd ../../../../../../../../.."
 
 alias ls="ls -p --color"
-alias vi='vi -u /usr/share/vim/vimrc'
+# alias vi='vi -u /usr/share/vim/vimrc'
 alias act="source venv/bin/activate"
