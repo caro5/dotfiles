@@ -1,21 +1,16 @@
 dotfiles
 ========
 
-Configuration for my command line.
-
 ## Setup
 
-### install.sh
-
-This is really all you need to run in order to get my configuration up
-and running in your home directory. From a command-line in either Linux
-or Mac OSX, you should just be able to run:
+From a command-line in either Linux or Mac OSX:
 
 ```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ./install.sh
 ```
 
-And it should do everything it does.
+tpm (Tmux Plugin Manager) needed to install tmux-resurrect
 
 ### Google Drive configuration
 
