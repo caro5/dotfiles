@@ -194,7 +194,7 @@ imap √ <PageUp>
 imap ∫ b
 imap ƒ f
 
-imap <C-c> <ESC>O
+imap <C-c> <ESC>
 
 " inoremap <C-y> <C-\><C-O>p
 " Set utf8 as standard encoding and en_US as the standard language
