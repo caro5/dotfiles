@@ -143,6 +143,46 @@ function backup_vim_files {
   popd > /dev/null
 }
 
+function get_tmux_vs {
+  TMUX_VS=$(tmux -V)
+  echo ${TMUX_VS} | cut -d " " -f 2
+}
+
+function download_tmux_linux {
+  local VERSION=2.6
+  sudo apt-get -y remove tmux
+  sudo apt-get -y install wget tar libevent-dev libncurses-dev
+  wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+  tar xf tmux-${VERSION}.tar.gz
+  rm -f tmux-${VERSION}.tar.gz
+  cd tmux-${VERSION}
+  ./configure
+  make
+  sudo make install
+  cd -
+  sudo rm -rf /usr/local/src/tmux-*
+  sudo mv tmux-${VERSION} /usr/local/src
+}
+
+function download_tmux_darwin {
+  brew install tmux
+  brew cleanup tmux
+}
+
+function install_tmux {
+  if [[ $(get_tmux_vs) < 2.6 ]]; then
+    OS=`uname -s`
+    # Download tmux for linux
+    if [[ "Linux" == "$OS" ]]; then
+      download_tmux_linux
+    else
+      download_tmux_darwin
+    return 0
+    fi
+    echo "Logout and login to shell again to get updated tmux"
+  fi
+}
+
 ########## MAIN ###########
 if [[ $0 == ./* ]]; then
   START_PWD=`pwd`
@@ -153,6 +193,13 @@ fi
 echo "First, ensuring submodules are up-to-date."
 git submodule init
 git submodule update --recursive
+
+
+# if the directory doesn't exist, create dir and download tpm. (needed for tmux-resurrect)
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  mkdir -p ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
+fi
 
 if [[ -d "${HOME}/Google Drive/dotfiles" ]]; then
   PRIVATE_FILE_PATH="${HOME}/Google Drive/dotfiles"
@@ -172,6 +219,8 @@ echo
 setup_scm_breeze
 echo
 install_fonts
+echo
+install_tmux
 echo
 
 if [[ $1 != '--no-vim' ]]; then

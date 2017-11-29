@@ -6,11 +6,8 @@ dotfiles
 From a command-line in either Linux or Mac OSX:
 
 ```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ./install.sh
 ```
-
-tpm (Tmux Plugin Manager) needed to install tmux-resurrect
 
 ### Google Drive configuration
 
