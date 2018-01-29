@@ -5,6 +5,7 @@ function current_git_branch_bare {
 alias ag='ag --ignore \*.json'
 
 alias g=git
+alias gs="git status"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gco="git checkout"
