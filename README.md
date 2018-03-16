@@ -19,6 +19,6 @@ any files in `${HOME}/Google Drive/dotfiles/bash_profile_includes`.
 
 ### VIM Configuration
 
-Currently using !(https://github.com/junegunn/vim-plug)[vim-plug] to manage VIM plugins.
+Currently using [vim-plug](https://github.com/junegunn/vim-plug) to manage VIM plugins.
 During installation, it will briefly open VIM to run the plugin installation process.
 Edit plugin list at the bottom of the `.vimrc` file.
