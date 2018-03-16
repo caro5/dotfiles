@@ -1,12 +1,10 @@
 dotfiles
 ========
 
-## Setup
-
-From a command-line in either Linux or Mac OSX:
+## Install
 
 ```
-./install.sh
+git clone git@github.com:caro5/dotfiles.git && cd dotfiles && ./install.sh
 ```
 
 ### Google Drive configuration
