@@ -8,12 +8,12 @@ alias agj='ag'
 
 # git aliases
 alias g=git
-alias gs="git status"
-alias gd="git diff"
-alias gds="git diff --staged"
 alias gco="git checkout"
 alias gc="git commit"
+alias gd="git diff"
+alias gds="git diff --staged"
 alias gst="git stash"
+alias gs="git status"
 alias gsl="git stash list"
 alias gpr="git pull --rebase"
 alias gmu="git fetch upstream && git merge --ff-only upstream/master"
