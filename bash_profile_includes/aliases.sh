@@ -38,4 +38,4 @@ alias .....="cd ../../../.."
 alias ls="ls -p --color"
 
 # company aliases
-alias nerd="cd /srv/nerdwallet"
+
