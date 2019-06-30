@@ -8,6 +8,7 @@ alias agj='ag'
 
 # git aliases
 alias g=git
+alias ga="git add"
 alias gco="git checkout"
 alias gc="git commit"
 alias gd="git diff"
@@ -35,7 +36,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias ls="ls -p --color"
+alias ls='ls -G'
 
 # company aliases
 
